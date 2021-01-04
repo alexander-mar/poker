@@ -5,30 +5,36 @@
 def game_intro():
     
     print("Welcome to Poker hand evaluator training")
-    print("Enter 'start' to start")
+    print("Enter 's' to start")
 
 #loading first hand of cards and then passing through to the poker
 def game_start():
     
     print("Welcome to Poker")
+    #give list of moves
 
-started = False
 
-#main loop of the game
-while True:
+def main():
 
-    if not started:
-        game_intro()
-        started = True
+    started = False
+    #main loop of the game
+    while True:
 
-    inp = input("Input a move: ")
-    inp = inp.lower()
+        if not started:
+            game_intro()
+            started = True
 
-    if inp == 'start':
-        game_start()
-    
-    elif inp in ['raise', 'call', 'check', 'fold']:
-        move_converter(inp)
+        inp = input("Input a move: ")
+        inp = inp.lower()
 
-    else:
-        print("enter a valid move")
+        if inp == 'start':
+            game_start()
+        
+        elif inp in ['raise', 'call', 'check', 'fold']:
+            move_converter(inp)
+
+        else:
+            print("enter a valid move")
+
+if __name__ == "__main__":
+    main()
